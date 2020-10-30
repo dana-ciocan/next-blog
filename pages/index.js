@@ -1,4 +1,6 @@
-import Layout from "../components/Layout"
+import matter from "gray-matter"
+import Layout from "@components/Layout"
+import PostList from "@components/PostList"
 
 const Index = ({ title, description, posts, ...props }) => {
   return <Layout pageTitle={title}>
