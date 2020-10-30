@@ -1,3 +1,7 @@
+# What's this?
+
+I have a blog up at [danaciocan.com](http://www.danaciocan.com) that is written using Gatsby. To try and learn Next.js a bit better, I am rewriting this blog in it.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
