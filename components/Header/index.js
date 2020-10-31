@@ -1,6 +1,6 @@
-import Link from 'next/link'
+import Link from "next/link";
 
-export default function Header() {
+export default Header = () => {
   return (
     <>
       <header className="header">
@@ -14,5 +14,5 @@ export default function Header() {
         </nav>
       </header>
     </>
-  )
-}
+  );
+};

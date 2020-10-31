@@ -1,7 +1,7 @@
-import Link from 'next/link'
+import Link from "next/link";
 
-export default function PostList({ posts }) {
-  if (posts === 'undefined') return null
+export default PostList = ({ posts }) => {
+  if (posts === "undefined") return null;
 
   return (
     <div>
@@ -15,9 +15,9 @@ export default function PostList({ posts }) {
                   <a>{post.frontmatter.title}</a>
                 </Link>
               </li>
-            )
+            );
           })}
       </ul>
     </div>
-  )
-}
+  );
+};
