@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default Header = () => {
+const Header = () => {
   return (
     <>
       <header className="header">
@@ -16,3 +16,5 @@ export default Header = () => {
     </>
   );
 };
+
+export default Header;

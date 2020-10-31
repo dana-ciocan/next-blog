@@ -1,6 +1,7 @@
 import Link from "next/link";
+import PropTypes from "prop-types";
 
-export default PostList = ({ posts }) => {
+const PostList = ({ posts }) => {
   if (posts === "undefined") return null;
 
   return (
@@ -21,3 +22,16 @@ export default PostList = ({ posts }) => {
     </div>
   );
 };
+
+PostList.propTypes = {
+  posts: PropTypes.arrayOf(
+    PropTypes.shape({
+      slug: PropTypes.string,
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string,
+      }),
+    })
+  ),
+};
+
+export default PostList;

@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Header from "../Header";
+import PropTypes from "prop-types";
 
-export default Layout = ({ children, pageTitle, ...props }) => {
+const Layout = ({ children, pageTitle }) => {
   return (
     <>
       <Head>
@@ -16,3 +17,10 @@ export default Layout = ({ children, pageTitle, ...props }) => {
     </>
   );
 };
+
+Layout.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.object),
+  pageTitle: PropTypes.string,
+};
+
+export default Layout;

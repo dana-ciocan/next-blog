@@ -1,10 +1,11 @@
 import Link from "next/link";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
+import PropTypes from "prop-types";
 
 import Layout from "@components/Layout";
 
-export default BlogPost = ({ siteTitle, frontmatter, markdownBody }) => {
+const BlogPost = ({ siteTitle, frontmatter, markdownBody }) => {
   if (!frontmatter) return <></>;
 
   return (
@@ -22,6 +23,17 @@ export default BlogPost = ({ siteTitle, frontmatter, markdownBody }) => {
     </Layout>
   );
 };
+
+BlogPost.propTypes = {
+  siteTitle: PropTypes.string,
+  frontmatter: PropTypes.shape({
+    title: PropTypes.string,
+    author: PropTypes.string,
+  }),
+  markdownBody: PropTypes.string,
+};
+
+export default BlogPost;
 
 export const getStaticProps = async ({ ...ctx }) => {
   const { postname } = ctx.params;
@@ -42,12 +54,13 @@ export const getStaticProps = async ({ ...ctx }) => {
 export async function getStaticPaths() {
   const blogSlugs = ((context) => {
     const keys = context.keys();
-    const data = keys.map((key, index) => {
-      let slug = key.replace(/^.*[\\\/]/, "").slice(0, -3);
+    const data = keys.map((key) => {
+      let slug = key.replace(/^.*[\\/]/, "").slice(0, -3);
 
       return slug;
     });
     return data;
+    // eslint-disable-next-line no-undef
   })(require.context("../../posts", true, /\.md$/));
 
   const paths = blogSlugs.map((slug) => `/post/${slug}`);

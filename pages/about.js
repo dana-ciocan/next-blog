@@ -1,6 +1,7 @@
 import Layout from "@components/Layout";
+import PropTypes from "prop-types";
 
-export default About = ({ title, description, ...props }) => {
+const About = ({ title, description }) => {
   return (
     <>
       <Layout pageTitle={`${title} | About`} description={description}>
@@ -9,13 +10,21 @@ export default About = ({ title, description, ...props }) => {
         <p className="description">{description}</p>
 
         <p>
-          I am a very exciting person. I know this because I'm following a very
-          exciting tutorial, and a not-exciting person wouldn't do that.
+          I am a very exciting person. I know this because I&apos;m following a
+          very exciting tutorial, and a not-exciting person wouldn&apos;t do
+          that.
         </p>
       </Layout>
     </>
   );
 };
+
+About.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+};
+
+export default About;
 
 export const getStaticProps = async () => {
   const configData = await import(`../siteconfig.json`);

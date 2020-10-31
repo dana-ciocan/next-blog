@@ -1,8 +1,9 @@
 import matter from "gray-matter";
 import Layout from "@components/Layout";
 import PostList from "@components/PostList";
+import PropTypes from "prop-types";
 
-export default Index = ({ title, description, posts, ...props }) => {
+const Index = ({ title, description, posts }) => {
   return (
     <Layout pageTitle={title}>
       <h1 className="title">Welcome to my blog!</h1>
@@ -14,6 +15,14 @@ export default Index = ({ title, description, posts, ...props }) => {
   );
 };
 
+Index.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  posts: PropTypes.object,
+};
+
+export default Index;
+
 export const getStaticProps = async () => {
   const configData = await import(`../siteconfig.json`);
 
@@ -22,7 +31,7 @@ export const getStaticProps = async () => {
     const values = keys.map(context);
 
     const data = keys.map((key, index) => {
-      let slug = key.replace(/^.*[\\\/]/, "").slice(0, -3);
+      let slug = key.replace(/^.*[\\/]/, "").slice(0, -3);
       const value = values[index];
       const document = matter(value.default);
       return {
@@ -32,6 +41,7 @@ export const getStaticProps = async () => {
       };
     });
     return data;
+    // eslint-disable-next-line no-undef
   })(require.context("../posts", true, /\.md$/));
 
   return {
