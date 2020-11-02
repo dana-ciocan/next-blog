@@ -4,6 +4,7 @@ import PostList from "@components/PostList";
 import PropTypes from "prop-types";
 
 const Index = ({ title, description, posts }) => {
+  console.log("title: ", title);
   return (
     <Layout pageTitle={title}>
       <h1 className="title">Welcome to my blog!</h1>

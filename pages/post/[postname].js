@@ -9,7 +9,7 @@ const BlogPost = ({ siteTitle, frontmatter, markdownBody }) => {
   if (!frontmatter) return <></>;
 
   return (
-    <Layout pageTitle={`${siteTitle} | ${frontmatter.title}`}>
+    <Layout pageTitle={`${siteTitle}`}>
       <Link href="/">
         <a>Back to post list</a>
       </Link>

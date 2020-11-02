@@ -1,9 +1,11 @@
 import Link from "next/link";
+import PropTypes from "prop-types";
 
-const Header = () => {
+const Header = ({ pageTitle }) => {
   return (
     <>
       <header className="header">
+        <h1>{pageTitle}</h1>
         <nav className="nav">
           <Link href="/">
             <a>My Blog</a>
@@ -15,6 +17,10 @@ const Header = () => {
       </header>
     </>
   );
+};
+
+Header.propTypes = {
+  pageTitle: PropTypes.string,
 };
 
 export default Header;

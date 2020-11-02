@@ -3,6 +3,7 @@ import Header from "../Header";
 import PropTypes from "prop-types";
 
 const Layout = ({ children, pageTitle }) => {
+  console.log("pageTitle: ", pageTitle);
   return (
     <>
       <Head>
@@ -10,10 +11,15 @@ const Layout = ({ children, pageTitle }) => {
         <title>{pageTitle}</title>
       </Head>
       <section className="layout">
-        <Header />
+        <Header pageTitle={pageTitle} />
         <div className="content">{children}</div>
       </section>
-      <footer>Built by me!</footer>
+      <footer>
+        &copy; {new Date().getFullYear()} &middot; Built with{" "}
+        <a href="https://nextjs.org/" rel="noreferrer" target="_blank">
+          Next.js
+        </a>
+      </footer>
     </>
   );
 };
