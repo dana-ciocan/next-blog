@@ -1,11 +1,19 @@
 import Head from "next/head";
 import Header from "../Header";
 import PropTypes from "prop-types";
+import styled from "@emotion/styled";
+
+const PageContainer = styled.div`
+  box-sizing: border-box;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2.625rem 1.3125rem;
+`;
 
 const Layout = ({ children, pageTitle }) => {
-  console.log("pageTitle: ", pageTitle);
   return (
-    <>
+    <PageContainer>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{pageTitle}</title>
@@ -20,7 +28,7 @@ const Layout = ({ children, pageTitle }) => {
           Next.js
         </a>
       </footer>
-    </>
+    </PageContainer>
   );
 };
 

@@ -1,14 +1,15 @@
 import matter from "gray-matter";
 import Layout from "@components/Layout";
+import Biography from "@components/Biography";
 import PostList from "@components/PostList";
 import PropTypes from "prop-types";
+import "typeface-montserrat";
+import "typeface-merriweather";
 
-const Index = ({ title, description, posts }) => {
-  console.log("title: ", title);
+const Index = ({ title, description, posts, twitter }) => {
   return (
     <Layout pageTitle={title}>
-      <h1 className="title">Welcome to my blog!</h1>
-      <p className="description">{description}</p>
+      <Biography description={description} twitter={twitter} />
       <main>
         <PostList posts={posts} />
       </main>
@@ -20,6 +21,7 @@ Index.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   posts: PropTypes.object,
+  twitter: PropTypes.string,
 };
 
 export default Index;
@@ -50,6 +52,7 @@ export const getStaticProps = async () => {
       posts,
       title: configData.default.title,
       description: configData.default.description,
+      twitter: configData.default.twitter,
     },
   };
 };

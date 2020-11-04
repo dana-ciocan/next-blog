@@ -3,6 +3,9 @@ body {
   color: gainsboro;
   font-family: "Merriweather", "Georgia", serif;
   font-size: 16px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 small {
@@ -21,16 +24,5 @@ h1 {
 }
 
 h1 > a {
-  color: white;
-}
-
-/* ----------- Non-Retina Screens ----------- */
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
-  #__next {
-    margin: 4rem 25% 0 25%;
-  }
-}
-
-/* ----------- Retina Screens ----------- */
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  color: gainsboro;
 }
