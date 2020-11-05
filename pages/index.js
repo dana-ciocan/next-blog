@@ -43,7 +43,7 @@ export const getStaticProps = async () => {
         slug,
       };
     });
-    return data;
+    return data.reverse();
     // eslint-disable-next-line no-undef
   })(require.context("../posts", true, /\.md$/));
 

@@ -8,10 +8,6 @@ body {
   box-sizing: border-box;
 }
 
-small {
-  color: #ff3399;
-}
-
 a {
   color: #00b3b3;
   text-decoration: none;
@@ -19,7 +15,6 @@ a {
 
 h1 {
   font-size: 200%;
-  margin-bottom: rhythm(1.5);
   margin-top: 0;
 }
 
