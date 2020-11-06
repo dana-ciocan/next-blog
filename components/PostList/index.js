@@ -46,7 +46,6 @@ const PostList = ({ posts }) => {
         {posts &&
           posts.map((post) => {
             const postDate = new Date(post.frontmatter.date);
-            console.log("post: ", post);
             return (
               <Post key={post.slug}>
                 <Link href={{ pathname: `/post/${post.slug}` }}>
