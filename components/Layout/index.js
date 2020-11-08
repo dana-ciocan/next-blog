@@ -8,6 +8,7 @@ const PageContainer = styled.div`
   padding: 2.625rem 1.3125rem;
   margin-left: auto;
   margin-right: auto;
+  box-sizing: border-box;
 `;
 
 const Layout = ({ children, pageTitle }) => {
