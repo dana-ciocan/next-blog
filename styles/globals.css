@@ -1,21 +1,19 @@
+html {
+  font: 100%/1.75 "Merriweather", "Georgia", serif;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
 body {
   background-color: #260033;
   color: gainsboro;
-  font-family: "Merriweather", "Georgia", serif;
-  font-size: 16px;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 a {
   color: #00b3b3;
   text-decoration: none;
-}
-
-h1 {
-  font-size: 200%;
-  margin-top: 0;
 }
 
 h1 > a {

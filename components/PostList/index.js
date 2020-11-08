@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import Link from "next/link";
 import PropTypes from "prop-types";
 
-const PostDate = styled.div`
+const PostDate = styled.small`
   color: #f39;
   font-size: 80%;
   margin: 0.75rem 0 0.5rem 0;
@@ -10,16 +10,20 @@ const PostDate = styled.div`
 
 const Posts = styled.ul`
   list-style-type: none;
-  margin: 6rem 0 2.5rem -2.5rem;
+  margin-left: -2.5rem;
+  margin-top: 0;
+  margin-bottom: 1.75rem;
 `;
 
-const Post = styled.li`
+const Post = styled.li``;
+
+const PostTitle = styled.h3`
+  margin-bottom: 0.4375rem;
   margin-top: 3.5rem;
-`;
-
-const PostTitle = styled.a`
-  font-size: 145%;
-  font-weight: 700;
+  font-family: "Merriweather", "Georgia", serif;
+  font-size: 1.4427rem;
+  line-height: 1.1;
+  font-weight: 900;
 `;
 
 const PostList = ({ posts }) => {
@@ -48,9 +52,11 @@ const PostList = ({ posts }) => {
             const postDate = new Date(post.frontmatter.date);
             return (
               <Post key={post.slug}>
-                <Link href={{ pathname: `/post/${post.slug}` }}>
-                  <PostTitle>{post.frontmatter.title}</PostTitle>
-                </Link>
+                <PostTitle>
+                  <Link href={{ pathname: `/post/${post.slug}` }}>
+                    {post.frontmatter.title}
+                  </Link>
+                </PostTitle>
                 <PostDate>{`${postDate.getDate()} ${
                   months[postDate.getMonth()]
                 } ${postDate.getFullYear()}`}</PostDate>

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 const BiographyContainer = styled.div`
   display: flex;
+  margin-bottom: 4.375rem;
 `;
 
 const ProfilePic = styled.img`
@@ -12,31 +13,25 @@ const ProfilePic = styled.img`
   margin-right: 0.875rem;
 `;
 
-const BiographyText = styled.div`
+const BiographyText = styled.p`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  margin-top: 0;
+  margin-bottom: 1.75rem;
+  display: inline;
+
+  a {
+    border-bottom: 1px solid #00b3b3;
+  }
 `;
 
-const TwitterLink = styled.a`
-  margin-top: 0.5rem;
-  box-shadow: 0 1px 0 0 currentColor;
-`;
-
-const Biography = ({ description, twitter }) => {
+const Biography = ({ description }) => {
   return (
     <BiographyContainer>
       <ProfilePic src="/profile-pic.jpg" />
-      <BiographyText>
-        <div dangerouslySetInnerHTML={{ __html: description }} />
-        <TwitterLink
-          href={`https://www.twitter.com/${twitter}`}
-          target="_blank"
-        >
-          Follow her on Twitter
-        </TwitterLink>
-      </BiographyText>
+      <BiographyText dangerouslySetInnerHTML={{ __html: description }} />
     </BiographyContainer>
   );
 };

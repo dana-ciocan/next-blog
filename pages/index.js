@@ -6,10 +6,10 @@ import PropTypes from "prop-types";
 import "typeface-montserrat";
 import "typeface-merriweather";
 
-const Index = ({ title, description, posts, twitter }) => {
+const Index = ({ title, description, posts }) => {
   return (
     <Layout pageTitle={title}>
-      <Biography description={description} twitter={twitter} />
+      <Biography description={description} />
       <main>
         <PostList posts={posts} />
       </main>
@@ -21,7 +21,6 @@ Index.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   posts: PropTypes.object,
-  twitter: PropTypes.string,
 };
 
 export default Index;
@@ -52,7 +51,6 @@ export const getStaticProps = async () => {
       posts,
       title: configData.default.title,
       description: configData.default.description,
-      twitter: configData.default.twitter,
     },
   };
 };

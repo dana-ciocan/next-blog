@@ -3,19 +3,19 @@ import Link from "next/link";
 import PropTypes from "prop-types";
 
 const Heading = styled.h1`
-  color: rgb(220, 220, 220);
   font-family: Montserrat, sans-serif;
-  font-size: 4rem;
   font-weight: 900;
+  font-size: 3.95285rem;
   line-height: 4.375rem;
-  text-rendering: optimizeLegibility;
-  margin-bottom: 2.75rem;
+  margin-bottom: 2.625rem;
+  margin-top: 0;
+  word-wrap: break-word;
 `;
 
 const Header = ({ pageTitle }) => {
   return (
     <>
-      <header className="header">
+      <header>
         <Heading>
           <Link href="/">{pageTitle}</Link>
         </Heading>
