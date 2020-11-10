@@ -1,21 +1,18 @@
-import Link from "next/link";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import PropTypes from "prop-types";
 
 import Layout from "@components/Layout";
+import Header from "@components/Header";
 
 const BlogPost = ({ siteTitle, frontmatter, markdownBody }) => {
   if (!frontmatter) return <></>;
 
   return (
     <Layout pageTitle={`${siteTitle}`}>
-      <Link href="/">
-        <a>Back to post list</a>
-      </Link>
+      <Header pageTitle={siteTitle} />
       <article>
         <h1>{frontmatter.title}</h1>
-        <p>By {frontmatter.author}</p>
         <div>
           <ReactMarkdown source={markdownBody} />
         </div>
