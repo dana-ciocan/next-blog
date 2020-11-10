@@ -11,7 +11,7 @@ const PageContainer = styled.div`
   box-sizing: border-box;
 `;
 
-const Layout = ({ children, pageTitle }) => {
+const Layout = ({ children, pageTitle, frontPage }) => {
   return (
     <PageContainer>
       <Head>
@@ -19,7 +19,7 @@ const Layout = ({ children, pageTitle }) => {
         <title>{pageTitle}</title>
       </Head>
       <section className="layout">
-        <Header pageTitle={pageTitle} />
+        <Header pageTitle={pageTitle} frontPage={frontPage} />
         <div className="content">{children}</div>
       </section>
       <footer>
@@ -35,6 +35,7 @@ const Layout = ({ children, pageTitle }) => {
 Layout.propTypes = {
   children: PropTypes.arrayOf(PropTypes.object),
   pageTitle: PropTypes.string,
+  frontPage: PropTypes.boolean,
 };
 
 export default Layout;

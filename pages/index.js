@@ -8,7 +8,7 @@ import "typeface-merriweather";
 
 const Index = ({ title, description, posts }) => {
   return (
-    <Layout pageTitle={title}>
+    <Layout pageTitle={title} frontPage={true}>
       <main>
         <Biography description={description} />
         <PostList posts={posts} />

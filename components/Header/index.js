@@ -5,18 +5,18 @@ import PropTypes from "prop-types";
 const Heading = styled.h1`
   font-family: Montserrat, sans-serif;
   font-weight: 900;
-  font-size: 3.95285rem;
-  line-height: 4.375rem;
   margin-bottom: 2.625rem;
   margin-top: 0;
   word-wrap: break-word;
+  font-size: ${(props) => (props.frontPage ? "3.95285rem" : "1.4425rem")};
+  line-height: ${(props) => (props.frontPage ? "4.375rem" : "1.1")};
 `;
 
-const Header = ({ pageTitle }) => {
+const Header = ({ pageTitle, frontPage }) => {
   return (
     <>
       <header>
-        <Heading>
+        <Heading as={frontPage ? "h1" : "h3"} frontPage={frontPage}>
           <Link href="/">{pageTitle}</Link>
         </Heading>
       </header>
@@ -24,8 +24,13 @@ const Header = ({ pageTitle }) => {
   );
 };
 
+Header.defaultProps = {
+  frontPage: false,
+};
+
 Header.propTypes = {
-  pageTitle: PropTypes.string,
+  pageTitle: PropTypes.string.isRequired,
+  frontPage: PropTypes.bool,
 };
 
 export default Header;

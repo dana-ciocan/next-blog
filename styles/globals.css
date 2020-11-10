@@ -16,6 +16,7 @@ a {
   text-decoration: none;
 }
 
+h3 > a,
 h1 > a {
   color: gainsboro;
 }
