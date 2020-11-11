@@ -25,6 +25,23 @@ const PostDate = styled.p`
   margin-top: 0;
 `;
 
+const Post = styled.div`
+  h2 {
+    margin-top: 3.5rem;
+    margin-bottom: 1.75rem;
+    font-size: 1.7329rem;
+    line-height: 1.9061rem;
+    font-weight: 900;
+  }
+  ul {
+    margin-left: -0.5rem !important;
+    margin-top: 2rem;
+    li {
+      margin-bottom: 1rem;
+    }
+  }
+`;
+
 const BlogPost = ({ siteTitle, frontmatter, markdownBody }) => {
   if (!frontmatter) return <></>;
   const postDate = new Date(frontmatter.date);
@@ -36,9 +53,9 @@ const BlogPost = ({ siteTitle, frontmatter, markdownBody }) => {
         <PostDate>{`${postDate.getDate()} ${
           months[postDate.getMonth()]
         } ${postDate.getFullYear()}`}</PostDate>
-        <div>
+        <Post>
           <ReactMarkdown source={markdownBody} />
-        </div>
+        </Post>
       </article>
     </Layout>
   );
