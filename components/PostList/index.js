@@ -1,3 +1,4 @@
+import { months } from "@constants/styling";
 import styled from "@emotion/styled";
 import Link from "next/link";
 import PropTypes from "prop-types";
@@ -28,20 +29,6 @@ const PostTitle = styled.h3`
 
 const PostList = ({ posts }) => {
   if (posts === "undefined") return null;
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
 
   return (
     <div>

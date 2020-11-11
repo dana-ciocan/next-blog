@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 import Layout from "@components/Layout";
 import styled from "@emotion/styled";
+import { months } from "@constants/styling";
 
 const PostTitle = styled.h1`
   font-family: Montserrat, sans-serif;
@@ -16,13 +17,25 @@ const PostTitle = styled.h1`
   text-rendering: optimizeLegibility;
 `;
 
+const PostDate = styled.p`
+  font-size: 0.83325rem;
+  line-height: 1.75rem;
+  display: block;
+  margin-bottom: 1.75rem;
+  margin-top: 0;
+`;
+
 const BlogPost = ({ siteTitle, frontmatter, markdownBody }) => {
   if (!frontmatter) return <></>;
-
+  const postDate = new Date(frontmatter.date);
   return (
     <Layout pageTitle={`${siteTitle}`}>
       <article>
         <PostTitle>{frontmatter.title}</PostTitle>
+
+        <PostDate>{`${postDate.getDate()} ${
+          months[postDate.getMonth()]
+        } ${postDate.getFullYear()}`}</PostDate>
         <div>
           <ReactMarkdown source={markdownBody} />
         </div>
@@ -36,6 +49,7 @@ BlogPost.propTypes = {
   frontmatter: PropTypes.shape({
     title: PropTypes.string,
     author: PropTypes.string,
+    date: PropTypes.string,
   }),
   markdownBody: PropTypes.string,
 };
