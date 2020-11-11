@@ -3,6 +3,18 @@ import ReactMarkdown from "react-markdown";
 import PropTypes from "prop-types";
 
 import Layout from "@components/Layout";
+import styled from "@emotion/styled";
+
+const PostTitle = styled.h1`
+  font-family: Montserrat, sans-serif;
+  font-weight: 900;
+  margin-bottom: 0;
+  margin-top: 1.75rem;
+  word-wrap: break-word;
+  font-size: 2.5rem;
+  line-height: 2.75rem;
+  text-rendering: optimizeLegibility;
+`;
 
 const BlogPost = ({ siteTitle, frontmatter, markdownBody }) => {
   if (!frontmatter) return <></>;
@@ -10,7 +22,7 @@ const BlogPost = ({ siteTitle, frontmatter, markdownBody }) => {
   return (
     <Layout pageTitle={`${siteTitle}`}>
       <article>
-        <h1>{frontmatter.title}</h1>
+        <PostTitle>{frontmatter.title}</PostTitle>
         <div>
           <ReactMarkdown source={markdownBody} />
         </div>

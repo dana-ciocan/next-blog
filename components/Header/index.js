@@ -3,13 +3,18 @@ import Link from "next/link";
 import PropTypes from "prop-types";
 
 const Heading = styled.h1`
-  font-family: Montserrat, sans-serif;
-  font-weight: 900;
-  margin-bottom: 2.625rem;
-  margin-top: 0;
-  word-wrap: break-word;
-  font-size: ${(props) => (props.frontPage ? "3.95285rem" : "1.4425rem")};
-  line-height: ${(props) => (props.frontPage ? "4.375rem" : "1.1")};
+   {
+    font-family: Montserrat, sans-serif;
+    font-weight: 900;
+    margin-bottom: ${(props) => (props.frontPage ? "2.625rem" : "0")};
+    margin-top: 0;
+    word-wrap: break-word;
+    font-size: ${(props) => (props.frontPage ? "3.95285rem" : "1.4425rem")};
+    line-height: ${(props) => (props.frontPage ? "4.375rem" : "1.1")};
+  }
+  a {
+    color: gainsboro;
+  }
 `;
 
 const Header = ({ pageTitle, frontPage }) => {

@@ -2,6 +2,7 @@ html {
   font: 100%/1.75 "Merriweather", "Georgia", serif;
   box-sizing: border-box;
   overflow-y: scroll;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -14,9 +15,4 @@ body {
 a {
   color: #00b3b3;
   text-decoration: none;
-}
-
-h3 > a,
-h1 > a {
-  color: gainsboro;
 }
